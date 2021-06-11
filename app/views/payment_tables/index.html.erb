@@ -1,0 +1,205 @@
+
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h2>Transaction Summary<span class="pull-right label label-default"></span></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li>
+                              <a onclick="openCity(event, 'profit')"><i class="glyphicon glyphicon-edit"></i>Profit Summary</a>
+                            </li>
+                            <li>
+                              <a onclick="openCity(event, 'ref')"><i class="glyphicon glyphicon-user"></i>Referal Profit Summary</a>
+                            </li>
+                            <li>
+                              <a onclick="openCity(event, 'dep')"><i class="glyphicon glyphicon-usd"></i>Deposit Summary</a>
+                            </li>
+                            <li>
+                              <a onclick="openCity(event, 'wid')"><i class="glyphicon glyphicon-usd"></i>Withdrawal Summary</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="panel-body">
+                        <div class="tab-pane fade in active tabcontent" id="profit">
+                          <h4>Profit Summary</h4>
+                          <div class="table-responsive">
+                            <table class="table table-striped jambo_table table-bordered">
+                              <thead>
+                                <tr class="headings">
+                                  <th class="column-title">Investment ID</th>
+                                  <th class="column-title">Profit (GHS)</th>
+                                  <th class="column-title">Date Paid</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              <% @client_profit = 0.0 %>
+                                <% @payment_tables.each do |payment_table| %>
+                                  <tr>
+                                    <td><%= payment_table.investment_master_code %></td>
+                                    <td><%= payment_table.client_profit %><% @client_profit = @client_profit + payment_table.client_profit %></td>
+                                    <td><%= payment_table.created_at.strftime("%F %R") %></td>
+                                  </tr>
+                                <% end %>
+                                <tr>
+                                  <td><strong>Total</strong></td>
+                                  <td><strong><%= @client_profit %></strong></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                                          
+                        <div class="tab-pane fade in tabcontent" id="ref"  style="display: none">
+                          <h4>Referal Profit Summary</h4>
+                          <div class="table-responsive">
+                            <table class="table table-striped jambo_table table-bordered">
+                              <thead>
+                                <tr class="headings">
+                                  <th class="column-title">Investment ID</th>
+                                  <th class="column-title">Profit (GHS)</th>
+                                  <th class="column-title">Date Paid</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              <% @referer_profit = 0.0 %>
+                                <% @referals.each do |payment_table| %>
+                                  <tr>
+                                    <td><%= payment_table.investment_master_code %></td>
+                                    <td><%= payment_table.referer_profit %><% @referer_profit = @referer_profit + payment_table.referer_profit %></td>
+                                    <td><%= payment_table.created_at.strftime("%F %R") %></td>
+                                  </tr>
+                                <% end %>
+                                <tr>
+                                  <td><strong>Total</strong></td>
+                                  <td><strong><%= @referer_profit %></strong></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        
+                        
+                                          
+                        <div class="tab-pane fade in tabcontent" id="dep"  style="display: none">
+                          <h4>Deposit Summary</h4>
+                          <div class="table-responsive">
+                            <table class="table table-striped jambo_table table-bordered">
+                              <thead>
+                                <tr class="headings">
+                                  <th class="column-title">Reference ID</th>
+                                  <th class="column-title">Network</th>
+                                  <th class="column-title">Mobile Money #</th>
+                                  <th class="column-title">Amount</th>
+                                  <th class="column-title">Response Code</th>
+                                  <th class="column-title">Description</th>
+                                  <th class="column-title">Date Paid</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <% @deposits.each do |deposit| %>
+                                  <tr>
+                                    <td><%= deposit.trans_id %></td>
+                                    <td><%= deposit.network %></td>
+                                    <td><%= deposit.customer_number %></td>
+                                    <td><%= deposit.amount %></td>
+                                    <td><%= deposit.resp_code %></td>
+                                    <td><%= deposit.resp_desc %></td>
+                                    <td><%= deposit.created_at.strftime("%F %R") %></td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        
+                        
+                                          
+                        <div class="tab-pane fade in tabcontent" id="wid"  style="display: none">
+                          <h4>Withdrawal Summary</h4>
+                          <div class="table-responsive">
+                            <table class="table table-striped jambo_table table-bordered">
+                              <thead>
+                                <tr class="headings">
+                                  <th class="column-title">Reference ID</th>
+                                  <th class="column-title">Network</th>
+                                  <th class="column-title">Mobile Money #</th>
+                                  <th class="column-title">Amount</th>
+                                  <th class="column-title">Response Code</th>
+                                  <th class="column-title">Description</th>
+                                  <th class="column-title">Date Paid</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <% @withdrawals.each do |withdrawal| %>
+                                  <tr>
+                                    <td><%= withdrawal.trans_id %></td>
+                                    <td><%= withdrawal.network %></td>
+                                    <td><%= withdrawal.customer_number %></td>
+                                    <td><%= withdrawal.amount %></td>
+                                    <td><%= withdrawal.resp_code %></td>
+                                    <td><%= withdrawal.resp_desc %></td>
+                                    <td><%= withdrawal.created_at.strftime("%F %R") %></td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        
+
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+
+
+
+
+
+
+
+<script type="text/javascript">
+  function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>

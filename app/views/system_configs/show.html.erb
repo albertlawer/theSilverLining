@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @system_config.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @system_config.desc %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @system_config.value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @system_config.status %>
+</p>
+
+<%= link_to 'Edit', edit_system_config_path(@system_config) %> |
+<%= link_to 'Back', system_configs_path %>

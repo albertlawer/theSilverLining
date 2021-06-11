@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @request_master.user_id %>
+</p>
+
+<p>
+  <strong>Customer number:</strong>
+  <%= @request_master.customer_number %>
+</p>
+
+<p>
+  <strong>Network:</strong>
+  <%= @request_master.network %>
+</p>
+
+<p>
+  <strong>Trans type:</strong>
+  <%= @request_master.trans_type %>
+</p>
+
+<p>
+  <strong>Item desc:</strong>
+  <%= @request_master.item_desc %>
+</p>
+
+<p>
+  <strong>Trans:</strong>
+  <%= @request_master.trans_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @request_master.amount %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @request_master.status %>
+</p>
+
+<p>
+  <strong>Callback status:</strong>
+  <%= @request_master.callback_status %>
+</p>
+
+<p>
+  <strong>Resp code:</strong>
+  <%= @request_master.resp_code %>
+</p>
+
+<p>
+  <strong>Resp desc:</strong>
+  <%= @request_master.resp_desc %>
+</p>
+
+<%= link_to 'Edit', edit_request_master_path(@request_master) %> |
+<%= link_to 'Back', request_masters_path %>

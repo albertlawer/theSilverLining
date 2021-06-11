@@ -1,0 +1,75 @@
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h2>Deposit/Withdrawal Summary<span class="pull-right label label-default"></span></h2>
+    </div>
+    <div class="row">
+            <div class="panel with-nav-tabs panel-default">
+              <div class="table-responsive">
+                  <table class="table table-striped jambo_table table-bordered">
+                    <thead>
+                        <tr class="headings">
+                          <th class="column-title">Client</th>
+                          <th class="column-title">Tranx Type</th>
+                          <th class="column-title">Reference ID</th>
+                          <th class="column-title">NW</th>
+                          <th class="column-title">Mobile #</th>
+                          <th class="column-title">Amount</th>
+                          <th class="column-title">Response Code</th>
+                          <th class="column-title">Description</th>
+                          <th class="column-title">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @request_masters.each do |request_master| %>
+                          	<tr>
+                          		<td><%= request_master.a_user.last_name+", "+request_master.a_user.other_names %></td>
+	                            <td>
+	                            	<% if request_master.trans_type == "DR" %>
+	                            	<%= "Deposit" %>
+	                            	<% elsif request_master.trans_type == "CR" %>
+	                            	<%= "Withdrawal" %>
+	                            	<% end %>
+	                            </td>
+	                            <td><%= request_master.trans_id %></td>
+	                            <td><%= request_master.network %></td>
+	                            <td><%= request_master.customer_number %></td>
+	                            <td><%= request_master.amount %></td>
+	                            <td><%= request_master.resp_code %></td>
+	                            <td><%= request_master.resp_desc %></td>
+	                            <td><%= request_master.created_at.strftime("%F %R") %></td>
+	                        </tr>
+                        <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                     
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

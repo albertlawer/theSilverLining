@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @investment_master.user_id %>
+</p>
+
+<p>
+  <strong>Amount invested:</strong>
+  <%= @investment_master.amount_invested %>
+</p>
+
+<p>
+  <strong>Transaction code:</strong>
+  <%= @investment_master.transaction_code %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @investment_master.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @investment_master.end_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @investment_master.status %>
+</p>
+
+<%= link_to 'Edit', edit_investment_master_path(@investment_master) %> |
+<%= link_to 'Back', investment_masters_path %>

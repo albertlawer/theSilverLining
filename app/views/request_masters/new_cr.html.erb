@@ -1,0 +1,59 @@
+
+<br/>
+<br/>
+<br/>
+    
+    
+    <!--==========================
+      More Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Wallet</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">A journey of a thousand steps begins with a step. Make a move today</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-cash"></i></div>
+              <h4 class="title"><a href="">Withdraw</a></h4>
+
+                <div class="well pull-right">To make a withdrawal please make sure your avaliable balance is GHS 30 and above. Please do well to enter correctly the necessary details to make a sucessful withdrawal. Withdrawals take maximum of 3 minutes to reflect in your mobile money wallet.</div>
+
+                <br/>
+                <br/>
+                <%= simple_form_for(@request_master, :html => { :class => 'description'}) do |f| %>
+                  <%= f.error_notification %>
+
+                  <%= f.label :network, "Network" %>
+                  <%= f.input :network, collection: [["MTN","MTN"],["Vodafone","VOD"],["Tigo","TIG"],["Airtel","AIR"]], label_method: :first, value_method: :last, include_blank: true, class:"form-control", label: false, boolean_style: :inline %>
+  
+
+                  <%= f.label :customer_number, "Mobile Money Number" %>
+                  <%= f.input :customer_number, class:"form-control", label: false, boolean_style: :inline %>
+
+
+                  <%= f.label :amount, "Amount" %>
+                  <%= f.input :amount, class:"form-control", label: false, boolean_style: :inline %>
+
+
+                  <%= f.input :trans_type, as: :hidden, input_html: {value: "CR"} %>
+                  <%= f.button :submit, "Withdraw", :class => 'btn btn-primary' %>
+                  <%= link_to "Back", request_masters_path, :class => 'btn btn-danger' %>
+           
+                <% end %>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section><!-- #more-features -->

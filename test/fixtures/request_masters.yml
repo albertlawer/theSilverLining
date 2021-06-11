@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  customer_number: MyString
+  network: MyString
+  trans_type: MyString
+  item_desc: MyString
+  trans_id: MyString
+  amount: 9.99
+  status: false
+  callback_status: false
+  resp_code: MyString
+  resp_desc: MyString
+
+two:
+  user_id: 1
+  customer_number: MyString
+  network: MyString
+  trans_type: MyString
+  item_desc: MyString
+  trans_id: MyString
+  amount: 9.99
+  status: false
+  callback_status: false
+  resp_code: MyString
+  resp_desc: MyString

@@ -1,0 +1,80 @@
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    <!--==========================
+      More Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Edit Profile</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <h4 class="title"><a href="">Edit <%= resource_name.to_s.humanize %></a></h4>
+
+
+
+                <br/>
+                <br/>
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                  <%= f.error_notification %>
+
+                  <%= f.label :last_name, "Surname" %>
+                  <%= f.input :last_name, required: true, label: false, boolean_style: :inline, autofocus: true %>
+
+                  <%= f.label :other_names, "Other Names" %>
+                  <%= f.input :other_names, class:"form-control", label: false, boolean_style: :inline %>
+                  
+                  <%= f.label :contact_number, "Contact Number" %>
+                  <%= f.input :contact_number, class:"form-control", label: false, boolean_style: :inline %>
+                  
+                  <%= f.label :email, "Email" %>
+                  <%= f.input :email, class:"form-control", label: false, boolean_style: :inline %>
+                  
+                  <%= f.label :username, "Username" %>
+                  <%= f.input :username, class:"form-control", label: false, boolean_style: :inline %>
+
+                  <%= f.label :password, "Password" %>
+                  <%= f.input :password, autocomplete: "off", label: false, hint: "leave it blank if you don't want to change it", required: false %>
+
+                  <%= f.label :password_confirmation, "Password Confirmation" %>
+                  <%= f.input :password_confirmation, label: false, required: false %>
+
+                  <%= f.label :current_password, "Current Password" %>
+                  <%= f.input :current_password, label: false, hint: "we need your current password to confirm your changes", required: true %>
+
+                  <%= f.button :submit, "Update", class: "btn btn-primary" %>
+                  <%= link_to "Cancel", root_path, class: "btn btn-danger" %>
+
+                <% end %>
+
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section><!-- #more-features -->
+
+
+
+
+
+
+

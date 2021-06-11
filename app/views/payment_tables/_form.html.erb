@@ -1,0 +1,17 @@
+<%= simple_form_for(@payment_table) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :referer_user_id %>
+    <%= f.input :investment_master_code %>
+    <%= f.input :client_profit %>
+    <%= f.input :referer_profit %>
+    <%= f.input :admin_profit %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

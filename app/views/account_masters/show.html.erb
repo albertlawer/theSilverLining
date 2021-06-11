@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @account_master.user_id %>
+</p>
+
+<p>
+  <strong>Avaliable balance:</strong>
+  <%= @account_master.avaliable_balance %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @account_master.status %>
+</p>
+
+<%= link_to 'Edit', edit_account_master_path(@account_master) %> |
+<%= link_to 'Back', account_masters_path %>

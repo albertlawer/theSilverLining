@@ -1,0 +1,78 @@
+
+
+    
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+    <!--==========================
+      More Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Roles</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="box wow fadeInLeft">
+              <h4 class="title"><a href=""><%= @role.name %> Permission Details</a></h4>
+
+
+
+                <br/>
+                <br/>
+                <div class="table-responsive">
+		          	<table class="table table-striped jambo_table table-bordered">
+			            <thead>
+			              <tr class="headings">
+				            <th class="header">Controller Name</th>
+				            <th class="header">Action</th>
+				            <th class="header">Name</th>
+				            <th class="header">Desc</th>
+			              </tr>
+			            </thead>
+
+			            <tbody>
+				          	<% @permissions.each do |permission| %>
+					            <tr>
+					              <td> <%= permission.subject_class %> </td>
+					              <td> <%= permission.action %> </td>
+					              <td> <%= permission.name %> </td>
+					              <td> <%= permission.description %> </td>
+					            </tr>
+					        <% end %>
+			            </tbody>
+		            </table>
+		       </div>
+	          <%= link_to 'Edit Role', edit_role_path(@role), :class => "btn btn-primary" %>
+	          <%= link_to 'Back', roles_path, :class => "btn btn-danger" %>
+
+
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section><!-- #more-features -->
+
+
+
+
+
+
+

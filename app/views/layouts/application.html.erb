@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="investments investment ghana money savings">
+    <title><%= content_for?(:title) ? yield(:title) : "The Silver Lining" %></title>
+    
+	<%= favicon_link_tag 'favicon.png' %>
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Silver Lining" %>">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+    
+
+  </head>
+  <body">
+  <%= render 'layouts/messages' %>
+  <% if user_signed_in? %>  
+    <% if current_user.role_id == 2 #admin %> 
+      <%= render 'layouts/navigation_admin' %>
+    <% elsif current_user.role_id == 1 #user %> 
+      <%= render 'layouts/navigation' %>
+    <% end %> 
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  <% else %>
+  	<%= yield %>
+  <% end %>
+
+  </body>
+    <%= javascript_include_tag 'application' %>
+</html>

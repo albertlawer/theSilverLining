@@ -1,0 +1,72 @@
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h2>Profit Summary<span class="pull-right label label-default"></span></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel with-nav-tabs panel-default">
+              <div class="table-responsive">
+                  <table class="table table-striped jambo_table table-bordered">
+                    <thead>
+                      <tr class="headings">
+                        <th class="column-title">Client</th>
+                        <th class="column-title">Investment ID</th>
+                        <th class="column-title">Profit (GHS)</th>
+                        <th class="column-title">Refferer</th>
+                        <th class="column-title">Ref Profit (GHS)</th>
+                        <th class="column-title">Admin Profit</th>
+                        <th class="column-title">Status</th>
+                        <th class="column-title">Date Paid</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <% @payment_tables.each do |payment_table| %>
+                      <tr>
+                        <td><%= payment_table.a_user.last_name+", "+payment_table.a_user.other_names %></td>
+                        <td><%= payment_table.investment_master_code %></td>
+                        <td><%= payment_table.client_profit %></td>
+                        <td><%= payment_table.a_ref.last_name+", "+payment_table.a_ref.other_names if payment_table.referer_user_id.present? %></td>
+                        <td><%= payment_table.referer_profit if payment_table.referer_user_id.present? %></td>
+                        <td><%= payment_table.admin_profit %></td>
+                        <td>
+                          <% if payment_table.status %>
+                            <span class="badge badge-success">Paid</span>
+                          <% else %>
+                            <span class="badge badge-danger">Not Paid</span>
+                          <% end %>
+                        </td>
+                        <td><%= payment_table.created_at.strftime("%F") %></td>
+                      </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                     
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

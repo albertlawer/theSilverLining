@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @payment_table.user_id %>
+</p>
+
+<p>
+  <strong>Referer user:</strong>
+  <%= @payment_table.referer_user_id %>
+</p>
+
+<p>
+  <strong>Investment master code:</strong>
+  <%= @payment_table.investment_master_code %>
+</p>
+
+<p>
+  <strong>Client profit:</strong>
+  <%= @payment_table.client_profit %>
+</p>
+
+<p>
+  <strong>Referer profit:</strong>
+  <%= @payment_table.referer_profit %>
+</p>
+
+<p>
+  <strong>Admin profit:</strong>
+  <%= @payment_table.admin_profit %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payment_table.status %>
+</p>
+
+<%= link_to 'Edit', edit_payment_table_path(@payment_table) %> |
+<%= link_to 'Back', payment_tables_path %>

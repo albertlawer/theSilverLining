@@ -1,0 +1,22 @@
+
+
+<%= simple_form_for(@system_config, :html => { :class => 'description'}) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.label :name, "Name" %>
+  <%= f.input :name, class:"form-control", label: false, boolean_style: :inline %>
+
+
+  <%= f.label :desc, "Desc" %>
+  <%= f.input :desc, as: :text, class:"form-control", label: false, boolean_style: :inline %>
+
+
+  <%= f.label :value, "Value" %>
+  <%= f.input :value, class:"form-control", label: false, boolean_style: :inline %>
+
+
+  <%= f.input :status, as: :hidden, input_html: {value: "1"} %>
+  <%= f.button :submit, "Save", :class => 'btn btn-primary' %>
+  <%= link_to "Back", system_configs_path, :class => 'btn btn-danger' %>
+
+<% end %>

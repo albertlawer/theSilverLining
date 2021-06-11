@@ -1,0 +1,53 @@
+
+<br/>
+<br/>
+<br/>
+        
+    <!--==========================
+      More Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Investment</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">A journey of a thousand steps begins with a step. Make a move today</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-cash"></i></div>
+              <h4 class="title"><a href="">Add Investment</a></h4>
+
+                <div class="well pull-right"><strong>Note</strong> Minimum amount for investment is GHS 100. To create an investment please make sure you have at least GHS 100 in your wallet. Duration period for an investment is 200 days. Your money would be released 201 days from creation. Profit comes daily. Minimum withdrawal is GHS 30.</div>
+
+                <br/>
+                <br/>
+                <%= simple_form_for(@investment_master, :html => { :class => 'description'}) do |f| %>
+                  	<%= f.error_notification %>
+
+                  	<%= f.label :amount_invested, "Amount to Invest" %>
+                  	<%= f.input :amount_invested, class:"form-control", label: false, boolean_style: :inline %>
+  
+				    <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+				    <%= f.input :status, as: :hidden, input_html: {value: true} %>
+
+
+                  
+	                <%= f.button :submit, "Create", :class => 'btn btn-primary' %>
+	                <%= link_to "Back", investment_masters_path, :class => 'btn btn-danger' %>
+           
+                <% end %>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section><!-- #more-features -->

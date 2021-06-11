@@ -1,0 +1,71 @@
+
+<br/>
+<br/>
+<br/>
+
+    
+    <!--==========================
+      More Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Welcome Admin</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">The level of success you would achieve is determined by the work you put in when no one is watching</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-cash"></i></div>
+              <h4 class="title"><a href="">Deposit Account</a></h4>
+              <p class="description">
+                MTN Bal: <%= @bal_list["MTN"]["Deposit"] %><br/>
+                Vodafone Bal: <%= @bal_list["VOD"]["Deposit"] %><br/>
+                Tigo Bal: <%= @bal_list["TIG"]["Deposit"] %><br/>
+                Airtel Bal: <%= @bal_list["AIR"]["Deposit"] %>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-person-stalker"></i></div>
+              <h4 class="title"><a href="">Withdrawal Account</a></h4>
+              <p class="description">
+                MTN Bal: <%= @bal_list["MTN"]["Withdrawal"] %><br/>
+                Vodafone Bal: <%= @bal_list["VOD"]["Withdrawal"] %><br/>
+                Tigo Bal: <%= @bal_list["TIG"]["Withdrawal"] %><br/>
+                Airtel Bal: <%= @bal_list["AIR"]["Withdrawal"] %>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-ios-loop"></i></div>
+              <h4 class="title"><a href="">Sms Balance</a></h4>
+              <p class="description">
+              Sms Bal: <%= @bal_list["SMSBAL"] %>
+                
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-levels"></i></div>
+              <h4 class="title"><a href="">Investments</a></h4>
+              <p class="description">
+                Active Investments: <%= @active_investments %><br/>
+                Expired Investments: <%= @inactive_investments %><br/>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- #more-features -->

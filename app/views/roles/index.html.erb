@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h2>Roles<span class="pull-right label label-default"></span></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+              <%= link_to 'New Role', new_role_path, class: "btn btn-primary" %>
+              <br/>
+              <br/>
+            <div class="panel with-nav-tabs panel-default">
+              <div class="table-responsive">
+                  <table class="table table-striped jambo_table table-bordered">
+                    <thead>
+                      <tr class="headings">
+                        <th class="column-title">Name</th>
+                        <th class="column-title">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <% @roles.each do |role| %>
+                      <tr>
+                        <td><%= role.name %></td>
+                        <td><%= link_to 'Edit', edit_role_path(role) %></td>
+                      </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                     
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

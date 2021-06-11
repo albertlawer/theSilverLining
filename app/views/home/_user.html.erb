@@ -1,0 +1,68 @@
+
+<br/>
+<br/>
+<br/>
+
+    
+    <!--==========================
+      More Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Welcome</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">The level of success you would achieve is determined by the work you put in when no one is watching</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-cash"></i></div>
+              <h4 class="title"><a href="">Account</a></h4>
+              <p class="description">
+                Avaliable Bal: <%= "GHS #{@balance}" %><br/>
+                Investment: <%= @inv_no %> investment(s)<br/>
+                Invested Amount: <%= "GHS #{@inv_amt}" %>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-person-stalker"></i></div>
+              <h4 class="title"><a href="">Referral</a></h4>
+              <p class="description">
+                Referrals: <%= @referal_no %><br/>
+                Referral Link below<br/>
+                <strong><%= "http://184.173.139.74:4000/register?ref="+@referal_code %></strong><br/>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-ios-loop"></i></div>
+              <h4 class="title"><a href="">Wallet</a></h4>
+              <p class="description">
+              <%= link_to "<button class='btn btn-default'>Deposit/Withdraw</button>".html_safe, request_masters_path %>
+                
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-levels"></i></div>
+              <h4 class="title"><a href="">Transactions</a></h4>
+              <p class="description">
+                <%= link_to "<button class='btn btn-default'>View Transactions</button>".html_safe, payment_tables_path %>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- #more-features -->

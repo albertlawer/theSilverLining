@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  amount_invested: 9.99
+  transaction_code: MyString
+  start_date: 2018-02-09 18:43:39
+  end_date: 2018-02-09 18:43:39
+  status: false
+
+two:
+  user_id: 1
+  amount_invested: 9.99
+  transaction_code: MyString
+  start_date: 2018-02-09 18:43:39
+  end_date: 2018-02-09 18:43:39
+  status: false

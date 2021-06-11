@@ -1,0 +1,27 @@
+
+<header id="header">
+    <div class="container">
+
+      	<div id="logo" class="pull-left">
+        	<h1><a href="#intro" class="scrollto">The Silver Lining</a></h1>
+	    </div>
+
+      	<nav id="nav-menu-container">
+        	<ul class="nav-menu">
+          		<li class="menu-active"><%= link_to "Home", root_path %></li>
+          		<li><%= link_to "Wallet", request_masters_path %></li>
+              <li><%= link_to "Investments", investment_masters_path %></li>
+          		<li><%= link_to "Transactions", payment_tables_path %></li>
+              <li class="menu-has-children"><a href="">Settings</a>
+                <ul>
+                  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Log Out", destroy_user_session_path , :method=> 'delete'  %></li>
+                </ul>
+              </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+
+
+

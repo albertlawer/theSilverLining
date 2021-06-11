@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  referer_user_id: 1
+  investment_master_code: MyString
+  client_profit: 9.99
+  referer_profit: 9.99
+  admin_profit: 9.99
+  status: false
+
+two:
+  user_id: 1
+  referer_user_id: 1
+  investment_master_code: MyString
+  client_profit: 9.99
+  referer_profit: 9.99
+  admin_profit: 9.99
+  status: false

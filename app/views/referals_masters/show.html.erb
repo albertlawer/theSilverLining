@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @referals_master.user_id %>
+</p>
+
+<p>
+  <strong>Refered user:</strong>
+  <%= @referals_master.refered_user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @referals_master.status %>
+</p>
+
+<%= link_to 'Edit', edit_referals_master_path(@referals_master) %> |
+<%= link_to 'Back', referals_masters_path %>

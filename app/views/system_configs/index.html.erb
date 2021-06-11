@@ -1,0 +1,72 @@
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h2>System Configuration<span class="pull-right label label-default"></span></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+              <%= link_to 'New Config', new_system_config_path, class: "btn btn-primary" %>
+              <br/>
+              <br/>
+            <div class="panel with-nav-tabs panel-default">
+              <div class="table-responsive">
+                  <table class="table table-striped jambo_table table-bordered">
+                    <thead>
+                      <tr class="headings">
+                        <th class="column-title">Name</th>
+                        <th class="column-title">Description</th>
+                        <th class="column-title">Value</th>
+                        <th class="column-title">Status</th>
+                        <th class="column-title">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <% @system_configs.each do |system_config| %>
+                      <tr>
+                        <td><%= system_config.name %></td>
+                        <td><%= system_config.desc %></td>
+                        <td><%= system_config.value %></td>
+                        <td>
+                          <% if system_config.status %>
+                            <span class="badge badge-success">Active</span>
+                          <% else %>
+                            <span class="badge badge-danger">Inactive</span>
+                          <% end %>
+                        </td>
+                        <td><%= link_to 'Edit', edit_system_config_path(system_config) %></td>
+                      </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                     
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
